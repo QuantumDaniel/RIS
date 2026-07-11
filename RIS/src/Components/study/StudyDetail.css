@@ -1,0 +1,271 @@
+.study-detail-layout {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.study-detail-container {
+    padding: 32px;
+    background-color: #f9fafb;
+    min-height: calc(100vh - 56px);
+}
+
+.section-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: white;
+}
+
+.section-header h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.info-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+}
+
+.info-item p {
+    font-size: 14px;
+    color: #111827;
+    margin: 0;
+    font-weight: 500;
+}
+
+.info-item .badge {
+    width: fit-content;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.table {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 12px 16px;
+}
+
+.table tbody td {
+    padding: 12px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.status-timeline {
+    padding: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    border: 2px solid white;
+    flex-shrink: 0;
+    margin-top: 4px;
+    box-shadow: 0 0 0 2px #e5e7eb;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.completed .timeline-marker {
+    background-color: #198754;
+    box-shadow: 0 0 0 2px #d1e7dd;
+}
+
+.timeline-item.active .timeline-marker {
+    background-color: #0dcaf0;
+    box-shadow: 0 0 0 2px #cff4fc;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-top: 2px;
+}
+
+.timeline-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px 0;
+}
+
+.timeline-time {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.image-preview-placeholder {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9fafb;
+    border: 2px dashed #e5e7eb;
+    border-radius: 8px;
+}
+
+.image-preview-placeholder i {
+    font-size: 48px;
+    color: #d1d5db;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.image-preview-placeholder p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+}
+
+.image-preview-placeholder small {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.study-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.study-actions .btn {
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.study-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px #cff4fc, 0 0 0 6px rgba(13, 202, 240, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 2px #cff4fc, 0 0 0 10px rgba(13, 202, 240, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .study-detail-container {
+        padding: 20px 16px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .info-item label {
+        font-size: 11px;
+    }
+
+    .info-item p {
+        font-size: 13px;
+    }
+
+    .section-header {
+        padding: 16px;
+    }
+
+    .section-header h5 {
+        font-size: 14px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table thead th {
+        padding: 10px 12px;
+        font-size: 10px;
+    }
+
+    .table tbody td {
+        padding: 10px 12px;
+    }
+
+    .study-actions {
+        flex-direction: column;
+    }
+
+    .study-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .study-actions {
+        gap: 8px;
+    }
+
+    .image-preview-placeholder {
+        padding: 60px 16px;
+    }
+
+    .image-preview-placeholder i {
+        font-size: 36px;
+    }
+}

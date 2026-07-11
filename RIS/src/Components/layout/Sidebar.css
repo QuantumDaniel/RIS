@@ -1,0 +1,123 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    width: 240px;
+    height: calc(100vh - 56px);
+    background-color: #f9fafb;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 20px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar-header h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    margin-right: 12px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-link:hover {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left-color: #0d6efd;
+}
+
+.sidebar-link.active {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left-color: #0d6efd;
+}
+
+.sidebar hr {
+    margin: 8px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+        top: 52px;
+        height: calc(100vh - 52px);
+    }
+
+    .sidebar-link {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .sidebar-link i {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        top: 0;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+
+    .sidebar-link {
+        flex: 0 0 50%;
+        padding: 10px 8px;
+        border-left: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .sidebar-link:hover {
+        border-left: none;
+    }
+
+    .sidebar-link.active {
+        border-left: none;
+    }
+}
