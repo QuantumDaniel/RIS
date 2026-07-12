@@ -101,13 +101,15 @@ export default function Login() {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary w-100" onClick={handleLogin}>
+                    <button type="button" className="btn btn-primary w-100" onClick={handleLogin}>
                         <i className="bi bi-box-arrow-in-right me-2"></i>
                         Sign In
                     </button>
                 </form>
                 <div>
-                    <h2>Or</h2>
+                    <div className="reset-password-divider">
+                        <span>or</span>
+                    </div>
 
                     <GoogleLogin
                         onSuccess={handleGoogleSuccess}
@@ -118,7 +120,7 @@ export default function Login() {
                 </div>
 
                 <div className="login-footer">
-                    <Link to="/reset-password" className="forgot-password">
+                    <Link to="/forgot-password" className="forgot-password">
                         Forgot Password?
                     </Link>
                 </div>

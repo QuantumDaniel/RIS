@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './ForgotPassword.css';
 
@@ -6,6 +7,7 @@ export default function ForgotPassword() {
     const [mail, setMail] = useState('');
     const [message, setMessage] = useState(false);
     const [success, setSuccess] = useState(false);
+    const navigate = useNavigate();
 
 
     return (
@@ -52,6 +54,9 @@ export default function ForgotPassword() {
                         e.preventDefault();
                         // Simulate sending reset link
                         setSuccess(true);
+                        setTimeout(() => {
+                            navigate('/reset-password');
+                        }, 3000);
                     }}>
                         <i className="bi bi-envelope me-2"></i>
                         Send Reset Link
