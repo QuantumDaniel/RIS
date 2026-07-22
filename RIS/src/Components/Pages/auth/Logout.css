@@ -1,0 +1,246 @@
+.logout-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.logout-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, #e7f1ff 0%, #f9fafb 100%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 50% 0);
+    z-index: 0;
+}
+
+.logout-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 48px 32px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.logout-icon {
+    font-size: 64px;
+    color: #0d6efd;
+    margin-bottom: 24px;
+    animation: slideDown 0.6s ease-out;
+    display: inline-block;
+}
+
+.logout-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+    animation: fadeIn 0.6s ease-out 0.1s both;
+}
+
+.logout-message {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0 0 24px 0;
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.logout-info {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.logout-info p {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.logout-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+.logout-actions .btn {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-actions .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+}
+
+.logout-actions .btn-primary:hover {
+    background-color: #0b5ed7;
+    box-shadow: 0 10px 15px -3px rgba(13, 110, 253, 0.2);
+    transform: translateY(-2px);
+}
+
+.logout-actions .btn-outline-secondary {
+    color: #6c757d;
+    border: 1px solid #6c757d;
+    background-color: transparent;
+}
+
+.logout-actions .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.logout-footer {
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    animation: fadeIn 0.6s ease-out 0.5s both;
+}
+
+.logout-footer p {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.logout-footer a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logout-footer a:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .logout-background {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0);
+    }
+
+    .logout-card {
+        margin: 16px;
+        padding: 40px 24px;
+    }
+
+    .logout-title {
+        font-size: 24px;
+    }
+
+    .logout-icon {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+
+    .logout-actions {
+        gap: 10px;
+    }
+
+    .logout-actions .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logout-card {
+        margin: 16px;
+        padding: 32px 20px;
+    }
+
+    .logout-title {
+        font-size: 22px;
+    }
+
+    .logout-icon {
+        font-size: 48px;
+    }
+
+    .logout-message {
+        font-size: 13px;
+    }
+
+    .logout-info p {
+        font-size: 12px;
+    }
+
+    .logout-footer p {
+        font-size: 11px;
+    }
+
+    .logout-actions {
+        gap: 8px;
+    }
+
+    .logout-actions .btn {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .logout-actions .btn i {
+        margin-right: 6px;
+    }
+}

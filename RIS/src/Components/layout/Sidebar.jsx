@@ -1,7 +1,11 @@
-
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Sidebar.css';
 
-export default function Sidebar() {
+export default function Sidebar({ isActive, setIsActive, handleClick }) {
+
+
+
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
@@ -9,47 +13,47 @@ export default function Sidebar() {
             </div>
 
             <nav className="sidebar-nav">
-                <a href="#" className="sidebar-link active">
+                <Link to="" className={`sidebar-link ${isActive === 'Dashboard' ? 'active' : ''}`} onClick={() => handleClick('Dashboard')}>
                     <i className="bi bi-speedometer2"></i>
                     <span>Dashboard</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="worklist" className={`sidebar-link ${isActive === 'Worklist' ? 'active' : ''}`} onClick={() => handleClick('Worklist')}>
                     <i className="bi bi-list-ul"></i>
                     <span>Worklist</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="studies" className={`sidebar-link ${isActive === 'Studies' ? 'active' : ''}`} onClick={() => handleClick('Studies')}>
                     <i className="bi bi-files"></i>
                     <span>Studies</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="reports" className={`sidebar-link ${isActive === 'Reports' ? 'active' : ''}`} onClick={() => handleClick('Reports')}>
                     <i className="bi bi-pencil-square"></i>
                     <span>Reports</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="patient-registration" className={`sidebar-link ${isActive === 'Patient Registration' ? 'active' : ''}`} onClick={() => handleClick('Patient Registration')}>
                     <i className="bi bi-person-plus"></i>
                     <span>Patient Registration</span>
-                </a>
+                </Link>
 
                 <hr className="my-3" />
 
-                <a href="#" className="sidebar-link">
+                <Link to="statistics" className={`sidebar-link ${isActive === 'Statistics' ? 'active' : ''}`} onClick={() => handleClick('Statistics')}>
                     <i className="bi bi-bar-chart"></i>
                     <span>Statistics</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="settings" className={`sidebar-link ${isActive === 'Settings' ? 'active' : ''}`} onClick={() => handleClick('Settings')}>
                     <i className="bi bi-gear"></i>
                     <span>Settings</span>
-                </a>
+                </Link>
 
-                <a href="#" className="sidebar-link">
+                <Link to="logout-modal" className={`sidebar-link ${isActive === 'Logout' ? 'active' : ''}`} onClick={() => handleClick('Logout')}>
                     <i className="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
-                </a>
+                </Link>
             </nav>
         </aside>
     );

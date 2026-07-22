@@ -1,0 +1,373 @@
+.settings-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.settings-body {
+    display: flex;
+    flex: 1;
+    margin-top: 56px;
+}
+
+.settings-main {
+    flex: 1;
+    margin-left: 240px;
+    overflow-y: auto;
+    background-color: #f9fafb;
+}
+
+.settings-container {
+    padding: 32px;
+    background-color: #f9fafb;
+}
+
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+    position: sticky;
+    top: 20px;
+}
+
+.settings-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 3px solid transparent;
+}
+
+.settings-menu-item i {
+    font-size: 16px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-menu-item:hover {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left-color: #0d6efd;
+}
+
+.settings-menu-item:hover i {
+    transform: translateX(4px);
+}
+
+.settings-menu-item.active {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left-color: #0d6efd;
+}
+
+.settings-menu-item.active i {
+    color: #0d6efd;
+}
+
+.settings-panel {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-out 0.1s both;
+}
+
+.settings-section {
+    padding: 24px;
+}
+
+.settings-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 8px 0;
+}
+
+.settings-description {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 20px 0;
+}
+
+.profile-avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar-large {
+    width: 80px;
+    height: 80px;
+    background-color: #e7f1ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #0d6efd;
+    flex-shrink: 0;
+}
+
+.settings-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-control,
+.form-select {
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #f9fafb;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: white;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+    outline: none;
+}
+
+.settings-form .btn {
+    grid-column: 1 / -1;
+    width: fit-content;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-form .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.settings-divider {
+    margin: 24px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.preferences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.preference-item:hover {
+    background-color: #f3f4f6;
+}
+
+.preference-info {
+    flex: 1;
+}
+
+.preference-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.preference-info small {
+    font-size: 12px;
+    color: #9ca3af;
+    display: block;
+    margin-top: 4px;
+}
+
+.preference-select {
+    min-width: 180px;
+    font-size: 13px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+.system-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.info-value {
+    font-size: 13px;
+    color: #6b7280;
+    font-family: 'Courier New', monospace;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .settings-main {
+        margin-left: 200px;
+    }
+
+    .settings-container {
+        padding: 24px;
+    }
+
+    .settings-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings-body {
+        flex-direction: column;
+    }
+
+    .settings-main {
+        margin-left: 180px;
+        margin-top: 0;
+    }
+
+    .settings-container {
+        padding: 20px 16px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .settings-menu {
+        order: 2;
+        margin-top: 20px;
+        position: static;
+    }
+
+    .settings-panel {
+        order: 1;
+    }
+
+    .preference-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .preference-select {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .profile-avatar-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .settings-form {
+        gap: 12px;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .settings-main {
+        margin-left: 0;
+    }
+
+    .settings-container {
+        padding: 16px;
+    }
+
+    .settings-section {
+        padding: 16px;
+    }
+
+    .settings-title {
+        font-size: 14px;
+    }
+
+    .settings-description {
+        font-size: 12px;
+    }
+
+    .profile-avatar-large {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .preference-item {
+        padding: 12px;
+    }
+
+    .form-label {
+        font-size: 12px;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}

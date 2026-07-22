@@ -1,0 +1,246 @@
+.reports-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.reports-body {
+    display: flex;
+    flex: 1;
+    margin-top: 56px;
+}
+
+.reports-main {
+    flex: 1;
+    margin-left: 240px;
+    overflow-y: auto;
+    background-color: #f9fafb;
+}
+
+.reports-container {
+    padding: 32px;
+    background-color: #f9fafb;
+}
+
+.reports-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-input,
+.filter-select {
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+    outline: none;
+}
+
+.reports-filters .btn {
+    height: 40px;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reports-filters .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out 0.1s both;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 14px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table tbody td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.table tbody tr:hover {
+    background-color: #f9fafb;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table .btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table .btn-sm:hover {
+    transform: scale(1.1);
+}
+
+.pagination-nav {
+    padding: 16px 20px;
+    border-top: 1px solid #f3f4f6;
+    background-color: #f9fafb;
+}
+
+.pagination {
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    color: #0d6efd;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-link:hover:not(.disabled .page-link) {
+    background-color: #e7f1ff;
+    border-color: #0d6efd;
+    color: #0b5ed7;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.page-item.disabled .page-link {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .reports-main {
+        margin-left: 200px;
+    }
+
+    .reports-filters {
+        gap: 8px;
+    }
+
+    .filter-group {
+        flex: 0 1 calc(50% - 4px);
+        min-width: 140px;
+    }
+
+    .reports-filters .btn {
+        flex: 0 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .reports-body {
+        flex-direction: column;
+    }
+
+    .reports-main {
+        margin-left: 180px;
+        margin-top: 0;
+    }
+
+    .reports-container {
+        padding: 20px 16px;
+    }
+
+    .reports-filters {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .filter-group {
+        flex: 1;
+        min-width: 100%;
+    }
+
+    .reports-filters .btn {
+        width: 100%;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table thead th {
+        padding: 10px 8px;
+        font-size: 10px;
+    }
+
+    .table tbody td {
+        padding: 12px 8px;
+    }
+
+    .table-responsive {
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 576px) {
+    .reports-main {
+        margin-left: 0;
+    }
+
+    .table {
+        font-size: 11px;
+    }
+
+    .table thead th {
+        padding: 8px 6px;
+    }
+
+    .table tbody td {
+        padding: 10px 6px;
+    }
+}
