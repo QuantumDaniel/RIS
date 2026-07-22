@@ -12,7 +12,8 @@ import Reports from "./Components/Pages/Reports";
 import PatientRegistration from "./Components/Pages/PatientRegistration";
 import Statistics from "./Components/Pages/Statistics";
 import Logout from "./Components/Pages/auth/Logout";
-import LogoutModal from "./Components/Pages/LogoutModal";
+import Notification from "./Components/Pages/Notification";
+import LogoutModal from "./Components/Pages/LogoutModal"
 import './App.css';
 
 
@@ -121,8 +122,7 @@ export default function App() {
 
     );
   }
-  console.log("local:", localStorage.getItem("active"));
-  console.log('active', isActive);
+
 
 
   return (
@@ -153,6 +153,7 @@ export default function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="patient-registration" element={<PatientRegistration />} />
             <Route path="statistics" element={<Statistics />} />
+            <Route path="notification" element={<Notification />} />
             <Route path="logout-modal" element={<LogoutModal
               isActive={isActive}
               setIsActive={setIsActive}

@@ -50,6 +50,11 @@ export default function Sidebar({ isActive, setIsActive, handleClick }) {
                     <span>Settings</span>
                 </Link>
 
+                <Link to="notification" className={`sidebar-link ${isActive === 'Notification' ? 'active' : ''}`} onClick={() => handleClick('Notification')}>
+                    <i className="bi bi-bell"></i>
+                    <span>Notification</span>
+                </Link>
+
                 <Link to="logout-modal" className={`sidebar-link ${isActive === 'Logout' ? 'active' : ''}`} onClick={() => handleClick('Logout')}>
                     <i className="bi bi-box-arrow-right"></i>
                     <span>Logout</span>
