@@ -103,7 +103,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                                             <td><strong>{li.id}</strong></td>
                                             <td>{li.name}</td>
                                             <td>{li.age}</td>
-                                            <td>{li.gender}</td>
+                                            <td>{li.Gender}</td>
                                             <td><span className="badge bg-light text-dark">{li.Modality}</span></td>
                                             <td>{li.bodyPart}</td>
                                             <td>{li.physician}</td>

@@ -1,5 +1,6 @@
 
 import './Settings.css';
+import { Link } from 'react-router-dom';
 
 export default function Settings() {
     return (
@@ -16,10 +17,7 @@ export default function Settings() {
                                 <i className="bi bi-lock"></i>
                                 Security
                             </a>
-                            <a href="#" className="settings-menu-item">
-                                <i className="bi bi-bell"></i>
-                                Notifications
-                            </a>
+
                             <a href="#" className="settings-menu-item">
                                 <i className="bi bi-palette"></i>
                                 Appearance

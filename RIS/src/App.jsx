@@ -14,6 +14,7 @@ import Statistics from "./Components/Pages/Statistics";
 import Logout from "./Components/Pages/auth/Logout";
 import Notification from "./Components/Pages/Notification";
 import LogoutModal from "./Components/Pages/LogoutModal"
+import UserGuide from "./Components/Pages/UserGuide";
 import './App.css';
 
 
@@ -23,6 +24,10 @@ export default function App() {
       || 'Dashboard'
   });
   const [search, setSearch] = useState('');
+  const [help, setHelp] = useState(true);
+  function helpModal() {
+    setHelp(false);
+  }
 
   const list = [
     {
@@ -111,6 +116,70 @@ export default function App() {
     },
   ];
 
+
+
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      title: "Urgent MRI Request",
+      message: "Emma Wilson has been scheduled for an urgent Brain MRI.",
+      time: "2 minutes ago",
+      type: "urgent",
+      unread: true,
+    },
+    {
+      id: 2,
+      title: "Examination Completed",
+      message: "John Doe's Chest X-ray examination has been completed.",
+      time: "15 minutes ago",
+      type: "completed",
+      unread: true,
+    },
+    {
+      id: 3,
+      title: "New Patient Registered",
+      message: "Sarah James has been added to today's worklist.",
+      time: "35 minutes ago",
+      type: "new",
+      unread: false,
+    },
+    {
+      id: 4,
+      title: "Report Available",
+      message: "Abdominal Ultrasound report is ready for review.",
+      time: "1 hour ago",
+      type: "report",
+      unread: false,
+    },
+    {
+      id: 5,
+      title: "CT Scanner Maintenance",
+      message: "Routine calibration is scheduled for 6:00 PM today.",
+      time: "3 hours ago",
+      type: "system",
+      unread: false,
+    },
+  ]);
+
+
+
+
+  const urgent = notifications.filter((not) => {
+    return (not.type === 'urgent');
+
+  });
+
+  const completed = notifications.filter((not) => {
+    return (not.type === 'completed');
+
+  });
+
+  const unread = notifications.filter((not) => {
+    return (not.unread === true);
+
+  });
+
+  const [count, setCount] = useState(unread.length);
   const filtered = list.filter((fil) => {
 
     return fil.name.toLowerCase().includes(search.toLowerCase()) || fil.id.toLowerCase().includes(search.toLowerCase());
@@ -122,6 +191,11 @@ export default function App() {
 
     );
   }
+
+  useEffect(() => {
+    setCount(unread.length);
+
+  })
 
 
 
@@ -141,6 +215,14 @@ export default function App() {
             list={list}
             filtered={filtered}
             handleClick={handleClick}
+            count={count}
+            setCount={setCount}
+            unread={unread}
+            notifications={notifications}
+            completed={completed}
+            urgent={urgent}
+            setNotifications={setNotifications}
+            helpModal={helpModal}
 
           />}>
             <Route index element={<Home />} />
@@ -153,15 +235,27 @@ export default function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="patient-registration" element={<PatientRegistration />} />
             <Route path="statistics" element={<Statistics />} />
-            <Route path="notification" element={<Notification />} />
+            <Route path="notification" element={<Notification
+              count={count}
+              setCount={setCount}
+              notifications={notifications}
+              setNotifications={setNotifications}
+              unread={unread}
+              completed={completed}
+              urgent={urgent}
+            />}
+            />
             <Route path="logout-modal" element={<LogoutModal
               isActive={isActive}
               setIsActive={setIsActive}
             />} />
+            <Route path="user-guide" element={<UserGuide handleClick={handleClick} />} />
             <Route path="*" element={<h1 class="error">404 Not Found</h1>} />
           </Route>
           <Route path="/logout" element={<Logout />} />
+
           <Route path="*" element={<h1 class="error">404 Not Found</h1>} />
+
         </Routes>
       </BrowserRouter>
     </div>

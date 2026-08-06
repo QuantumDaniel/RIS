@@ -303,6 +303,13 @@
     z-index: 1040;
 }
 
+.navbar-item:hover .help-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .help-btn.active~.help-dropdown {
     opacity: 1;
     visibility: visible;
