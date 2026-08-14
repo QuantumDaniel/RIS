@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import "./UserGuide.css";
 
 const features = [
@@ -40,7 +40,38 @@ const features = [
     },
 ];
 
+
+const questions = [
+    {
+        question: ' How do I begin interpreting a study?',
+        answer: `Open the Worklist, select the assigned examination, and launch the associated images in the PACS/Image Viewer.`,
+        id: 0
+    },
+
+    {
+        question: ' Can I save a report before completing it?',
+        answer: `Yes. Reports can be saved as drafts and completed later before final submission.`,
+        id: 1
+    },
+
+    {
+        question: 'What should I do if images fail to load?',
+        answer: `Refresh the study, verify network connectivity, or contact the system administrator if the issue persists.`,
+        id: 2
+    }
+]
 const UserGuide = () => {
+
+    const [toggle, setToggle] = useState(false);
+    const [control, setControl] = useState('+');
+    const [id, setId] = useState(null);
+
+
+    const controlToggle = (questionId) => {
+        setId((prev) => (prev === questionId ? null : questionId));
+        setControl((prev) => (prev === '+' ? '-' : '+'));
+        setToggle((prev) => (prev === questionId ? false : true));
+    };
     return (
         <div className="container-fluid py-4">
 
@@ -154,75 +185,40 @@ const UserGuide = () => {
                 <div className="card-body">
 
                     <div className="accordion" id="guideFAQ">
+                        {questions.map((ques, index) => {
+                            return (
+                                <div key={ques.id} className="accordion-item bg-light mb-2">
+                                    <span>{ques.question} </span>
 
-                        <div className="accordion-item">
-                            <h2 className="accordion-header">
-                                <button
-                                    className="accordion-button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq1"
-                                >
-                                    How do I begin interpreting a study?
-                                </button>
-                            </h2>
 
-                            <div
-                                id="faq1"
-                                className="accordion-collapse collapse show"
-                                data-bs-parent="#guideFAQ"
-                            >
-                                <div className="accordion-body">
-                                    Open the Worklist, select the assigned examination, and launch
-                                    the associated images in the PACS/Image Viewer.
+                                    <button
+                                        className="accordion-button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target={`#faq${ques.id}`}
+                                        onClick={() => controlToggle(ques.id)}
+
+                                    >
+                                        {control}
+                                    </button>
+
+
+                                    <div
+                                        id={`faq${ques.id}`}
+                                        className="accordion-collapse collapse show"
+                                        data-bs-parent="#guideFAQ"
+                                    >
+                                        {id === ques.id && (
+                                            <div className="accordion-body bg-primary">
+                                                {ques.answer}
+                                            </div>
+                                        )
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="accordion-item">
-                            <h2 className="accordion-header">
-                                <button
-                                    className="accordion-button collapsed"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq2"
-                                >
-                                    Can I save a report before completing it?
-                                </button>
-                            </h2>
 
-                            <div
-                                id="faq2"
-                                className="accordion-collapse collapse"
-                                data-bs-parent="#guideFAQ"
-                            >
-                                <div className="accordion-body">
-                                    Yes. Reports can be saved as drafts and completed later before
-                                    final submission.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="accordion-item">
-                            <h2 className="accordion-header">
-                                <button
-                                    className="accordion-button collapsed"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq3"
-                                >
-                                    What should I do if images fail to load?
-                                </button>
-                            </h2>
-
-                            <div
-                                id="faq3"
-                                className="accordion-collapse collapse"
-                                data-bs-parent="#guideFAQ"
-                            >
-                                <div className="accordion-body">
-                                    Refresh the study, verify network connectivity, or contact the
-                                    system administrator if the issue persists.
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        })}
 
                     </div>
 

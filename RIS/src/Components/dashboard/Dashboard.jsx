@@ -8,7 +8,10 @@ import PageHeader from '../layout/PageHeader';
 import './Dashboard.css';
 import Navbar from '../layout/Navbar';
 import Sidebar from '../layout/Sidebar';
-import ShowModal from '../layout/ShowModal';
+import ContactModal from '../layout/ContactModal';
+import ReportModal from '../layout/ReportModal'
+import AboutModal from '../layout/About';
+
 
 
 export default function Dashboard({
@@ -26,7 +29,13 @@ export default function Dashboard({
     completed,
     unread,
     setNotifications,
-    helpModal
+    helpModal,
+    help,
+    setHelp,
+    report,
+    setReport,
+    about,
+    setAbout
 }) {
     const [user, setUser] = useState(null);
 
@@ -66,6 +75,13 @@ export default function Dashboard({
                 unread={unread} count={count}
                 setCount={setCount}
                 helpModal={helpModal}
+                help={help}
+                setHelp={setHelp}
+                report={report}
+                setReport={setReport}
+                about={about}
+                setAbout={setAbout}
+
             />
 
 
@@ -75,7 +91,9 @@ export default function Dashboard({
                 handleClick={handleClick}
             />
             <div className="dashboard-container">
-                {!helpModal && (<ShowModal />)}
+                {help && (<ContactModal help={help} setHelp={setHelp} />)}
+                {(report && <ReportModal report={report} setReport={setReport} />)}
+                {about && (<AboutModal about={about} setAbout={setAbout} />)}
 
                 <Outlet />
 

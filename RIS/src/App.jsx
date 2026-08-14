@@ -24,9 +24,11 @@ export default function App() {
       || 'Dashboard'
   });
   const [search, setSearch] = useState('');
-  const [help, setHelp] = useState(true);
+  const [help, setHelp] = useState(false);
+  const [report, setReport] = useState(false);
+  const [about, setAbout] = useState(false)
   function helpModal() {
-    setHelp(false);
+    setHelp(true);
   }
 
   const list = [
@@ -223,6 +225,12 @@ export default function App() {
             urgent={urgent}
             setNotifications={setNotifications}
             helpModal={helpModal}
+            help={help}
+            setHelp={setHelp}
+            report={report}
+            setReport={setReport}
+            about={about}
+            setAbout={setAbout}
 
           />}>
             <Route index element={<Home />} />

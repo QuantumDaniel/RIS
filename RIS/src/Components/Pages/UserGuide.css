@@ -62,6 +62,17 @@
     font-weight: 500;
 }
 
+.accordion-item {
+    background: blue;
+    color: white;
+    border-style: solid;
+}
+
+.accordion-body {
+    background: white;
+    color: black;
+}
+
 .alert {
     border: none;
     border-radius: 12px;

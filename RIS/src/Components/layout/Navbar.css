@@ -356,6 +356,11 @@
     min-width: 0;
 }
 
+.help-text button {
+    background: none;
+    border: none;
+}
+
 .help-title {
     font-size: 12px;
     font-weight: 500;

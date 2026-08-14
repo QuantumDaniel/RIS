@@ -16,7 +16,11 @@ export default function Navbar(
         unread,
         count,
         setCount,
-        helpModal
+        helpModal,
+        report,
+        setReport,
+        about,
+        setAbout
     }
 ) {
     const navigate = useNavigate();
@@ -25,8 +29,6 @@ export default function Navbar(
 
     function getValue(e) {
         setSearch(e.target.value);
-
-
     }
 
     function dropDown() {
@@ -117,24 +119,31 @@ export default function Navbar(
                                         <small>Learn how to use RIS</small>
                                     </div>
                                 </Link>
+
                                 <a href="#" className="help-item">
                                     <i className="bi bi-chat-dots"></i>
                                     <div className="help-text">
-                                        <p className="help-title">Contact Support</p>
+                                        <button onClick={helpModal} className="help-title-btn">
+                                            <p className="help-title">Contact Support</p>
+                                        </button>
                                         <small>Get help from our team</small>
                                     </div>
                                 </a>
                                 <a href="#" className="help-item">
                                     <i className="bi bi-bug"></i>
                                     <div className="help-text">
-                                        <p className="help-title">Report Issue</p>
+                                        <button onClick={() => { setReport(true) }}>
+                                            <p className="help-title">Report Issue</p>
+                                        </button>
                                         <small>Report a bug or problem</small>
                                     </div>
                                 </a>
                                 <a href="#" className="help-item">
                                     <i className="bi bi-info-circle"></i>
                                     <div className="help-text">
-                                        <p className="help-title">About RIS</p>
+                                        <button onClick={() => { setAbout(true) }}>
+                                            <p className="help-title">About RIS</p>
+                                        </button>
                                         <small>Version information</small>
                                     </div>
                                 </a>
