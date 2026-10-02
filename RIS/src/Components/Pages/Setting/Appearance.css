@@ -1,0 +1,170 @@
+.appearance-page {
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #f8fafc;
+}
+
+/* Header */
+.appearance-header {
+    margin-bottom: 28px;
+}
+
+.appearance-header h4 {
+    color: #1e293b;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.appearance-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Cards */
+.appearance-card {
+    background: #ffffff;
+    border: 1px solid #e8edf3 !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease;
+}
+
+.appearance-card:hover {
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Card Body */
+.appearance-card-body {
+    padding: 22px;
+}
+
+/* Section Title */
+.appearance-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.appearance-title h5 {
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.appearance-description {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Icons */
+.appearance-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #eff6ff;
+    color: #2563eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+/* Theme / Density Options */
+.appearance-option {
+    height: 100%;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.appearance-option:hover {
+    border-color: #93c5fd;
+    background-color: #f8fbff;
+}
+
+/* Selected option */
+.appearance-option.active {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* Option title */
+.appearance-option-title {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Option description */
+.appearance-option-description {
+    display: block;
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Switch */
+.appearance-switch {
+    width: 42px !important;
+    height: 22px !important;
+    cursor: pointer;
+}
+
+.appearance-switch:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Preference rows */
+.appearance-preference {
+    min-height: 65px;
+}
+
+.appearance-preference h6 {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.appearance-preference p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Radio buttons */
+.appearance-option .form-check-input {
+    cursor: pointer;
+}
+
+.appearance-option .form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .appearance-page {
+        padding: 16px;
+    }
+
+    .appearance-header h4 {
+        font-size: 20px;
+    }
+
+    .appearance-card-body {
+        padding: 18px;
+    }
+
+    .appearance-preference {
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+}

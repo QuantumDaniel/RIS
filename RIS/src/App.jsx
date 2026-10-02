@@ -16,6 +16,11 @@ import Notification from "./Components/Pages/Notification";
 import LogoutModal from "./Components/Pages/LogoutModal"
 import UserGuide from "./Components/Pages/UserGuide";
 import './App.css';
+import Security from "./Components/Pages/Setting/Security";
+import ProfileSettings from "./Components/Pages/Setting/ProfileSettings";
+import Appearance from "./Components/Pages/Setting/Appearance";
+import LanguageRegion from "./Components/Pages/Setting/LanguageRegion";
+import Organization from "./Components/Pages/Setting/Organization";
 
 
 export default function App() {
@@ -209,32 +214,41 @@ export default function App() {
           <Route path="/" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/dashboard" element={<Dashboard
-            isActive={isActive}
-            setIsActive={setIsActive}
-            search={search}
-            setSearch={setSearch}
-            list={list}
-            filtered={filtered}
-            handleClick={handleClick}
-            count={count}
-            setCount={setCount}
-            unread={unread}
-            notifications={notifications}
-            completed={completed}
-            urgent={urgent}
-            setNotifications={setNotifications}
-            helpModal={helpModal}
-            help={help}
-            setHelp={setHelp}
-            report={report}
-            setReport={setReport}
-            about={about}
-            setAbout={setAbout}
+          <Route path="/dashboard" element=
+            {<Dashboard
+              isActive={isActive}
+              setIsActive={setIsActive}
+              search={search}
+              setSearch={setSearch}
+              list={list}
+              filtered={filtered}
+              handleClick={handleClick}
+              count={count}
+              setCount={setCount}
+              unread={unread}
+              notifications={notifications}
+              completed={completed}
+              urgent={urgent}
+              setNotifications={setNotifications}
+              helpModal={helpModal}
+              help={help}
+              setHelp={setHelp}
+              report={report}
+              setReport={setReport}
+              about={about}
+              setAbout={setAbout}
 
-          />}>
+            />}>
             <Route index element={<Home />} />
-            <Route path="settings" element={<Settings />} />
+            <Route path="settings" element={<Settings />}>
+              <Route path="security" element={<Security />} />
+              <Route path="profile-settings" element={<ProfileSettings />} />
+              <Route path="appearance" element={<Appearance />} />
+              <Route path="language-region" element={<LanguageRegion />} />
+              <Route path="organization" element={<Organization />} />
+            </Route>
+
+
             <Route path="studies" element={<Studies />} />
             <Route path="worklist" element={<WorkList
               list={list}
@@ -266,6 +280,6 @@ export default function App() {
 
         </Routes>
       </BrowserRouter>
-    </div>
+    </div >
   );
 }

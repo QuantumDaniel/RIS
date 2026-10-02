@@ -1,0 +1,126 @@
+.security-page {
+    min-height: 100vh;
+    padding: 24px;
+    background-color: #f8fafc;
+}
+
+/* Header */
+.security-header {
+    margin-bottom: 28px;
+}
+
+.security-header h4 {
+    color: #1e293b;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.security-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Security Cards */
+.security-card {
+    border: 1px solid #e8edf3 !important;
+    border-radius: 12px !important;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.security-card:hover {
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Card Content */
+.security-card-body {
+    padding: 22px;
+}
+
+.security-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.security-title h5 {
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.security-description {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Icons */
+.security-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+/* Change Password Button */
+.change-password-btn {
+    border-radius: 7px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.change-password-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Two Factor Authentication */
+.two-factor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bootstrap Switch Customization */
+.security-switch {
+    width: 42px !important;
+    height: 22px !important;
+    cursor: pointer;
+}
+
+.security-switch:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .security-page {
+        padding: 16px;
+    }
+
+    .security-header h4 {
+        font-size: 20px;
+    }
+
+    .two-factor-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .security-card-body {
+        padding: 18px;
+    }
+}
