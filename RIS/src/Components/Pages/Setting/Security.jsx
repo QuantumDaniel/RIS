@@ -1,6 +1,14 @@
 import './Security.css';
+import { useState } from 'react';
+import ChangePassword from './ChangePassword';
 
 export default function Security() {
+    const [change, setChange] = useState(false);
+    const [buttonText, setButtonText] = useState('Change Password');
+    function handleChangePassword() {
+        setChange(!change);
+        setButtonText(change ? 'Change Password' : 'Cancel');
+    }
 
     return (
 
@@ -30,12 +38,17 @@ export default function Security() {
                         Keep your account secure by using a strong and unique password.
                     </p>
 
-                    <button className="btn btn-primary change-password-btn">
-                        Change Password
+                    <button className="btn btn-primary change-password-btn" onClick={handleChangePassword}>
+                        {buttonText}
                     </button>
 
                 </div>
+
+                {/*reset password*/}
+                {change && <ChangePassword />}
             </div>
+
+
 
             {/* Two-Factor Authentication */}
             <div className="card security-card shadow-sm mb-4">
