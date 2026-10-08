@@ -77,6 +77,8 @@
 .login-form .form-control {
     height: 44px;
     font-size: 14px;
+    width: auto !important;
+    color: black;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     padding: 10px 14px;
@@ -87,7 +89,7 @@
 
 .login-form .form-control:focus {
     background-color: white;
-    color: black;
+
     border-color: #0d6efd;
     box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
     outline: none;

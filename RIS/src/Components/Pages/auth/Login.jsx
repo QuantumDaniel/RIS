@@ -82,7 +82,7 @@ export default function Login() {
                         <input
                             type="email"
                             id="email"
-                            className="form-control"
+                            className="form-control width-100"
                             placeholder="Enter your email"
                             value={mail}
                             onChange={updateMail}
@@ -94,7 +94,7 @@ export default function Login() {
                         <input
                             type="password"
                             id="password"
-                            className="form-control"
+                            className="form-control width-100"
                             placeholder="Enter your password"
                             value={password}
                             onChange={updatePassword}
