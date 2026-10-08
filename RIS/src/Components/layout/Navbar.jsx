@@ -177,6 +177,7 @@ export default function Navbar(
                                 <i className="bi bi-gear"></i>
                                 Settings
                             </Link>
+                           { /*
                             <a href="#" className="dropdown-item">
                                 <i className="bi bi-shield-check"></i>
                                 Security
@@ -185,6 +186,8 @@ export default function Navbar(
                                 <i className="bi bi-clock-history"></i>
                                 Activity Log
                             </a>
+                            */
+}
                         </div>
                     </div>
                 </div>
