@@ -1,10 +1,48 @@
-
+import React, { useState, useEffect } from 'react';
 import './Worklist.css';
 
 export default function Worklist({ search, setSearch, list, filtered }) {
+    const [modality, setModality] = useState('');
+    const [status, setStatus] = useState('');
+    const [filteredList, setFilteredList] = useState(filtered);
+    const [currentModality, setCurrentModality] = useState('All Modalities');
+    const [currentStatus, setCurrentStatus] = useState('All Status');
 
 
 
+    function getModality(event) {
+        setModality(event.target.value);
+
+    }
+
+    const sorted = list.filter((fil) => {
+        {
+        } return fil.Modality.includes(modality);
+
+
+    });
+
+    function getStatus(event) {
+        setStatus(event.target.value);
+    }
+
+    function resetFileters() {
+        setModality('All Modalities');
+        setStatus('All Status');
+        setCurrentModality('All Modalities');
+        setCurrentStatus('All Status');
+    }
+
+
+    useEffect(() => {
+        if (modality === 'CT' || modality === 'MRI' || modality === 'X-Ray' || modality === 'Ultrasound' || modality === 'PET') {
+            setFilteredList(sorted);
+        }
+        else {
+            setFilteredList(filtered);
+        }
+
+    }, [modality, status, filtered]);
 
     return (
         <div className="worklist-layout">
@@ -15,8 +53,8 @@ export default function Worklist({ search, setSearch, list, filtered }) {
 
 
                     <div className="filter-group">
-                        <select className="form-select filter-select">
-                            <option>All Modalities</option>
+                        <select className="form-select filter-select" onChange={(event) => { getModality(event) }}  >
+                            <option>{currentModality}</option>
                             <option>CT</option>
                             <option>MRI</option>
                             <option>X-Ray</option>
@@ -26,8 +64,8 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                     </div>
 
                     <div className="filter-group">
-                        <select className="form-select filter-select">
-                            <option>All Status</option>
+                        <select className="form-select filter-select" onChange={(event) => { getStatus(event) }} >
+                            <option>{currentStatus}</option>
                             <option>Pending</option>
                             <option>In Progress</option>
                             <option>Reported</option>
@@ -36,7 +74,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                     </div>
 
 
-                    <button className="btn btn-outline-secondary">
+                    <button className="btn btn-outline-secondary" onClick={resetFileters}>
                         <i className="bi bi-funnel"></i>
                         Reset Filters
                     </button>
@@ -97,7 +135,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                                     )
 
                                 })*/}
-                                {filtered.map((li) => {
+                                {filteredList.map((li) => {
                                     return (
                                         <tr key={li.id}>
                                             <td><strong>{li.id}</strong></td>
