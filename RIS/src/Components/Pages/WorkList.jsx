@@ -14,6 +14,9 @@ export default function Worklist({ search, setSearch, list, filtered }) {
         setModality(event.target.value);
 
     }
+    function getStatus(event) {
+        setStatus(event.target.value);
+    }
 
     const sorted = list.filter((fil) => {
         {
@@ -22,15 +25,19 @@ export default function Worklist({ search, setSearch, list, filtered }) {
 
     });
 
-    function getStatus(event) {
-        setStatus(event.target.value);
+    const sortedStatus = list.filter((fil) => {
+        return fil.status.includes(status);
     }
+    );
+
+
 
     function resetFileters() {
-        setModality('All Modalities');
-        setStatus('All Status');
         setCurrentModality('All Modalities');
         setCurrentStatus('All Status');
+        setModality('All Modalities');
+        setStatus('All Status');
+
     }
 
 
@@ -41,6 +48,11 @@ export default function Worklist({ search, setSearch, list, filtered }) {
         else {
             setFilteredList(filtered);
         }
+        if (status === 'Pending' || status === 'In Progress' || status === 'Reported' || status === 'Completed') {
+            setFilteredList(sortedStatus);
+        }
+
+
 
     }, [modality, status, filtered]);
 
@@ -72,12 +84,13 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                             <option>Completed</option>
                         </select>
                     </div>
-
+                    {/*}
 
                     <button className="btn btn-outline-secondary" onClick={resetFileters}>
                         <i className="bi bi-funnel"></i>
                         Reset Filters
                     </button>
+                    */}
                 </div>
 
                 <div className="table-card">
