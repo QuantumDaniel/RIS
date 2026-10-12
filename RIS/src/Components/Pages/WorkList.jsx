@@ -7,8 +7,13 @@ export default function Worklist({ search, setSearch, list, filtered }) {
     const [filteredList, setFilteredList] = useState(filtered);
     const [currentModality, setCurrentModality] = useState('All Modalities');
     const [currentStatus, setCurrentStatus] = useState('All Status');
+    const [currentPage, setCurrentPage] = useState(1);
 
+    const RecordsPerPage = 2;
+    const indexOfLastRecord = currentPage * RecordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - RecordsPerPage;
 
+    const currentRecords = filteredList.slice(indexOfFirstRecord, indexOfLastRecord);
 
     function getModality(event) {
         setModality(event.target.value);
@@ -52,9 +57,8 @@ export default function Worklist({ search, setSearch, list, filtered }) {
             setFilteredList(sortedStatus);
         }
 
-
-
     }, [modality, status, filtered]);
+
 
     return (
         <div className="worklist-layout">
@@ -148,7 +152,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                                     )
 
                                 })*/}
-                                {filteredList.map((li) => {
+                                {currentRecords.map((li) => {
                                     return (
                                         <tr key={li.id}>
                                             <td><strong>{li.id}</strong></td>
@@ -195,13 +199,13 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                             <li className="page-item disabled">
                                 <a className="page-link" href="#">Previous</a>
                             </li>
-                            <li className="page-item active">
+                            <li className="page-item active" onClick={() => setCurrentPage(1)}>
                                 <a className="page-link" href="#">1</a>
                             </li>
-                            <li className="page-item">
+                            <li className="page-item" onClick={() => setCurrentPage(2)}>
                                 <a className="page-link" href="#">2</a>
                             </li>
-                            <li className="page-item">
+                            <li className="page-item" onClick={() => setCurrentPage(3)}>
                                 <a className="page-link" href="#">3</a>
                             </li>
                             <li className="page-item">
