@@ -8,6 +8,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
     const [currentModality, setCurrentModality] = useState('All Modalities');
     const [currentStatus, setCurrentStatus] = useState('All Status');
     const [currentPage, setCurrentPage] = useState(1);
+    const [buttonClicked, setButtonClicked] = useState(1);
 
     const RecordsPerPage = 2;
     const indexOfLastRecord = currentPage * RecordsPerPage;
@@ -199,13 +200,13 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                             <li className="page-item disabled">
                                 <a className="page-link" href="#">Previous</a>
                             </li>
-                            <li className="page-item active" onClick={() => setCurrentPage(1)}>
+                            <li className={`page-item ${currentPage === 1 ? 'active' : ''}`} onClick={() => setCurrentPage(1)}>
                                 <a className="page-link" href="#">1</a>
                             </li>
-                            <li className="page-item" onClick={() => setCurrentPage(2)}>
+                            <li className={`page-item ${currentPage === 2 ? 'active' : ''}`} onClick={() => setCurrentPage(2)}>
                                 <a className="page-link" href="#">2</a>
                             </li>
-                            <li className="page-item" onClick={() => setCurrentPage(3)}>
+                            <li className={`page-item ${currentPage === 3 ? 'active' : ''}`} onClick={() => setCurrentPage(3)}>
                                 <a className="page-link" href="#">3</a>
                             </li>
                             <li className="page-item">
