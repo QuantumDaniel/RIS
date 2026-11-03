@@ -35,7 +35,8 @@ export default function Dashboard({
     report,
     setReport,
     about,
-    setAbout
+    setAbout,
+    handleItem
 }) {
     const [user, setUser] = useState(null);
 
@@ -89,6 +90,7 @@ export default function Dashboard({
                 isActive={isActive}
                 setIsActive={setIsActive}
                 handleClick={handleClick}
+                handleItem={handleItem}
             />
             <div className="dashboard-container">
                 {help && (<ContactModal help={help} setHelp={setHelp} />)}

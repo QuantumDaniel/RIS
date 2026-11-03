@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Sidebar.css';
 
-export default function Sidebar({ isActive, setIsActive, handleClick }) {
+export default function Sidebar({ isActive, setIsActive, handleClick, handleItem }) {
 
 
 
@@ -55,9 +55,9 @@ export default function Sidebar({ isActive, setIsActive, handleClick }) {
                     <span>Notification</span>
                 </Link>
 
-                <Link to="logout-modal" className={`sidebar-link ${isActive === 'Logout' ? 'active' : ''}`} onClick={() => handleClick('Logout')}>
+                <Link onClick={handleItem} to="logout-modal" className={`sidebar-link ${isActive === 'Logout' ? 'active' : ''}`}>
                     <i className="bi bi-box-arrow-right"></i>
-                    <span>Logout</span>
+                    <span >Logout</span>
                 </Link>
             </nav>
         </aside>

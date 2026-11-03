@@ -28,6 +28,8 @@ export default function App() {
     return localStorage.getItem("active")
       || 'Dashboard'
   });
+
+
   const [search, setSearch] = useState('');
   const [help, setHelp] = useState(false);
   const [report, setReport] = useState(false);
@@ -203,7 +205,11 @@ export default function App() {
     setCount(unread.length);
 
   })
-
+  function handleItem() {
+    localStorage.removeItem('active');
+    setIsActive('Dashboard');
+    console.log(localStorage.getItem('active'));
+  }
 
 
   return (
@@ -237,6 +243,7 @@ export default function App() {
               setReport={setReport}
               about={about}
               setAbout={setAbout}
+              handleItem={handleItem}
 
             />}>
             <Route index element={<Home />} />
