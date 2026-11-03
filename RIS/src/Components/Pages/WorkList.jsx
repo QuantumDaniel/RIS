@@ -60,6 +60,13 @@ export default function Worklist({ search, setSearch, list, filtered }) {
 
     }, [modality, status, filtered]);
 
+    function nextPage() {
+        if (currentPage === 3)
+            setCurrentPage(1);
+        else
+            setCurrentPage(currentPage + 1);
+    }
+
 
     return (
         <div className="worklist-layout">
@@ -197,7 +204,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
 
                     <nav className="pagination-nav">
                         <ul className="pagination mb-0">
-                            <li className="page-item disabled">
+                            <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`} onClick={() => setCurrentPage(currentPage - 1)}>
                                 <a className="page-link" href="#">Previous</a>
                             </li>
                             <li className={`page-item ${currentPage === 1 ? 'active' : ''}`} onClick={() => setCurrentPage(1)}>
@@ -209,7 +216,7 @@ export default function Worklist({ search, setSearch, list, filtered }) {
                             <li className={`page-item ${currentPage === 3 ? 'active' : ''}`} onClick={() => setCurrentPage(3)}>
                                 <a className="page-link" href="#">3</a>
                             </li>
-                            <li className="page-item">
+                            <li className="page-item" onClick={nextPage}>
                                 <a className="page-link" href="#">Next</a>
                             </li>
                         </ul>
